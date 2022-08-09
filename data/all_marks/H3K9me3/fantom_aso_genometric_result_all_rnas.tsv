@@ -1,0 +1,6 @@
+chr.names	query.population	reference.population	relative.distances.ks.p.value	relative.distances.ecdf.deviation.area	relative.distances.ecdf.area.correlation	relative.distances.ecdf.deviation.area.p.value	scaled.absolute.min.distance.sum.p.value	scaled.absolute.min.distance.sum.lower.tail	jaccard.measure.p.value	jaccard.measure.lower.tail	projection.test.p.value	projection.test.lower.tail	projection.test.obs.to.exp	lnc
+awhole	12	45	0.950244248617903	0.0269163781737684	-0.07282665282546001	0.857	0.16699999999999998	False	0.0	False	0.00162914562570537	False	0.0	ENSG00000233117_ASO_G0233117_02
+awhole	499	255	0.000737903264805717	0.0157859782875204	-0.0430422340854633	0.011	0.494	True	0.0590000000000001	False	0.065750029411917	False	0.0	ENSG00000231185_ASO_G0231185_02
+awhole	5760	993	7.30056156378334e-05	0.00712189069909109	0.0290041329167259	0.0	0.0	True	0.2	False	0.179386222782682	False	1.2680841145447699	ENSG00000214548_ASO_G0214548_AD_09
+awhole	499	255	0.000737903264805717	0.0157859782875204	-0.0430422340854633	0.013	0.468	True	0.072	False	0.065750029411917	False	0.0	ENSG00000231185_ASO_G0231185_03
+awhole	5760	993	7.30056156378334e-05	0.00712189069909109	0.0290041329167259	0.0	0.0	True	0.2	False	0.179386222782682	False	1.2680841145447699	ENSG00000214548_ASO_G0214548_01
