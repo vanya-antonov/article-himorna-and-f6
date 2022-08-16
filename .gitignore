@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 Icon
 images_src/.DS_Store
+images/.DS_Store
