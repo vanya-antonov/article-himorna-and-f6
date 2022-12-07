@@ -1,0 +1,15 @@
+name: himorna-env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10.0
+  - pandas
+  - matplotlib
+  - scipy
+  - statsmodels
+  - biopython
+  - bcbio-gff
+  - mygene
+  - h5py
+  - seaborn
