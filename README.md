@@ -13,4 +13,7 @@ Create and activate the environment:
 mamba env list
 mamba env create -f conda-env.yml
 mamba activate himorna-env
+
+# For Mac
+pip install bcbio-gff
 ```
