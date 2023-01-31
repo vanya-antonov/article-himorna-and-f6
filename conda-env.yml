@@ -9,7 +9,7 @@ dependencies:
   - scipy
   - statsmodels
   - biopython
-  - bcbio-gff
   - mygene
   - h5py
   - seaborn
+  - ipykernel
