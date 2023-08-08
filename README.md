@@ -1,5 +1,3 @@
-# article-himorna-and-f6
-
 ## Prepare environment to run the code
 
 Download and install conda or [mamba](https://github.com/conda-forge/miniforge#mambaforge):
