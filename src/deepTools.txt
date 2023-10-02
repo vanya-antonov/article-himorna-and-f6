@@ -1,0 +1,102 @@
+###### ссылка на папку ../data/chip, которая не умещается в репозиторий
+###### bamCompare
+
+bamCompare -b1 ../data/chip/C-1_.bam -b2 ../data/chip/I-1_.bam -o ../data/chip/deeptools_output/bamcompare/FGD5-AS1_04_H3K9ac.bigWig -of bigwig
+bamCompare -b1 ../data/chip/C-2_.bam -b2 ../data/chip/I-2_.bam -o ../data/chip/deeptools_output/bamcompare/FGD5-AS1_AD03_H3K9ac.bigWig -of bigwig 
+
+bamCompare -b1 ../data/chip/C-5_.bam -b2 ../data/chip/I-5_.bam -o ../data/chip/deeptools_output/bamcompare/AC005592.2_02_H3K9me3.bigWig -of bigwig
+bamCompare -b1 ../data/chip/C-6_.bam -b2 ../data/chip/I-6_.bam -o ../data/chip/deeptools_output/bamcompare/AC005592.2_03_H3K9me3.bigWig -of bigwig
+
+bamCompare -b1 ../data/chip/C-7_.bam -b2 ../data/chip/I-7_.bam -o ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_03_H3K27ac.bigWig -of bigwig
+bamCompare -b1 ../data/chip/C-8_.bam -b2 ../data/chip/I-8_.bam -o ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_05_H3K27ac.bigWig -of bigwig
+
+bamCompare -b1 ../data/chip/C-9_.bam -b2 ../data/chip/I-9_.bam -o ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig -of bigwig
+bamCompare -b1 ../data/chip/C-10.bam -b2 ../data/chip/I-10.bam -o ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig -of bigwig
+
+###### computeMatrix
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/FGD5-AS1_04_H3K9ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9ac_1.bigWig -R ../data/expr_bed/fgd5_04_high.bed ../data/expr_bed/fgd5_04_med.bed ../data/expr_bed/fgd5_04_low.bed ../data/expr_bed/fgd5_04_zero.bed -o ../data/chip/deeptools_output/computematrix/FGD5-AS1_04_H3K9ac_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/FGD5-AS1_AD03_H3K9ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9ac_2.bigWig -R ../data/expr_bed/fgd5_ad03_high.bed ../data/expr_bed/fgd5_ad03_med.bed ../data/expr_bed/fgd5_ad03_low.bed ../data/expr_bed/fgd5_ad03_zero.bed -o ../data/chip/deeptools_output/computematrix/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/AC005592.2_02_H3K9me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9me3_1.bigWig -R ../data/expr_bed/ac_02_high.bed ../data/expr_bed/ac_02_med.bed ../data/expr_bed/ac_02_low.bed ../data/expr_bed/ac_02_zero.bed -o ../data/chip/deeptools_output/computematrix/AC005592.2_02_H3K9me3_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/AC005592.2_03_H3K9me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9me3_2.bigWig -R ../data/expr_bed/ac_03_high.bed ../data/expr_bed/ac_03_med.bed ../data/expr_bed/ac_03_low.bed ../data/expr_bed/ac_03_zero.bed -o ../data/chip/deeptools_output/computematrix/AC005592.2_03_H3K9me3_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_03_H3K27ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K27ac_1.bigWig -R ../data/expr_bed/rp11_03_high.bed ../data/expr_bed/rp11_03_med.bed ../data/expr_bed/rp11_03_low.bed ../data/expr_bed/rp11_03_zero.bed -o ../data/chip/deeptools_output/computematrix/RP11-398K22.12_03_H3K27ac_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_05_H3K27ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K27ac_2.bigWig -R ../data/expr_bed/rp11_05_high.bed ../data/expr_bed/rp11_05_med.bed ../data/expr_bed/rp11_05_low.bed ../data/expr_bed/rp11_05_zero.bed -o ../data/chip/deeptools_output/computematrix/RP11-398K22.12_05_H3K27ac_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K36me3_2.bigWig -R ../data/expr_bed/ctd_01_high.bed ../data/expr_bed/ctd_01_med.bed ../data/expr_bed/ctd_01_low.bed ../data/expr_bed/ctd_01_zero.bed -o ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K36me3_1.bigWig -R ../data/expr_bed/ctd_03_high.bed ../data/expr_bed/ctd_03_med.bed ../data/expr_bed/ctd_03_low.bed ../data/expr_bed/ctd_03_zero.bed -o ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/FGD5-AS1_04_H3K9ac.bigWig ../data/chip/deeptools_output/bamcompare/FGD5-AS1_AD03_H3K9ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9ac_1.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9ac_2.bigWig -R ../data/expr_bed/enhancers.bed -o ../data/chip/deeptools_output/computematrix_enchancers/FGD5-AS1_H3K9ac_enchancers.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/AC005592.2_02_H3K9me3.bigWig ../data/chip/deeptools_output/bamcompare/AC005592.2_03_H3K9me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9me3_1.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K9me3_2.bigWig -R ../data/expr_bed/enhancers.bed -o ../data/chip/deeptools_output/computematrix_enchancers/AC005592.2_H3K9me3_enchancers.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_03_H3K27ac.bigWig ../data/chip/deeptools_output/bamcompare/RP11-398K22.12_05_H3K27ac.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K27ac_1.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K27ac_2.bigWig -R ../data/expr_bed/enhancers.bed -o ../data/chip/deeptools_output/computematrix_enchancers/RP11-398K22.12_H3K27ac_enchancers.mat.gz -a 2000 -b 2000
+
+computeMatrix scale-regions -S ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig ../data/chip/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K36me3_1.bigWig ../data/chip/deeptools_output/bamcompare/NCA_H3K36me3_2.bigWig -R ../data/expr_bed/enhancers.bed -o ../data/chip/deeptools_output/computematrix_enchancers/CTD-2587H24.5_H3K36me3_enchancers.mat.gz -a 2000 -b 2000
+
+###### plotProfile
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/FGD5-AS1_04_H3K9ac_expr.mat.gz -out ../images/plotprofile/FGD5-AS1_04_H3K9ac_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_FGD5-AS1_04_H3K9ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -out ../images/plotprofile/FGD5-AS1_AD03_H3K9ac_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_FGD5-AS1_AD03_H3K9ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/AC005592.2_02_H3K9me3_expr.mat.gz -out ../images/plotprofile/AC005592.2_02_H3K9me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_AC005592.2_02_H3K9me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/AC005592.2_03_H3K9me3_expr.mat.gz -out ../images/plotprofile/AC005592.2_03_H3K9me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_AC005592.2_03_H3K9me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/RP11-398K22.12_03_H3K27ac_expr.mat.gz -out ../images/plotprofile/RP11-398K22.12_03_H3K27ac_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_RP11-398K22.12_03_H3K27ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/RP11-398K22.12_05_H3K27ac_expr.mat.gz -out ../images/plotprofile/RP11-398K22.12_05_H3K27ac_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_RP11-398K22.12_05_H3K27ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -out ../images/plotprofile/CTD-2587H24.5_01_H3K36me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_CTD-2587H24.5_01_H3K36me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -out ../images/plotprofile/CTD-2587H24.5_03_H3K36me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_CTD-2587H24.5_03_H3K36me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_06_H3K27me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_06_H3K27me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_06_H3K4me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_06_H3K4me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_AD04_H3K27me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_AD04_H3K27me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_AD04_H3K4me3_pergroup.png --perGroup --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_AD04_H3K4me3"
+
+
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/FGD5-AS1_04_H3K9ac_expr.mat.gz -out ../images/plotprofile/FGD5-AS1_04_H3K9ac.png --numPlotsPerRow 2 --plotTitle "log_FGD5-AS1_04_H3K9ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -out ../images/plotprofile/FGD5-AS1_AD03_H3K9ac.png --numPlotsPerRow 2 --plotTitle "log_FGD5-AS1_AD03_H3K9ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/AC005592.2_02_H3K9me3_expr.mat.gz -out ../images/plotprofile/AC005592.2_02_H3K9me3.png --numPlotsPerRow 2 --plotTitle "log_AC005592.2_02_H3K9me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/AC005592.2_03_H3K9me3_expr.mat.gz -out ../images/plotprofile/AC005592.2_03_H3K9me3.png --numPlotsPerRow 2 --plotTitle "log_AC005592.2_03_H3K9me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/RP11-398K22.12_03_H3K27ac_expr.mat.gz -out ../images/plotprofile/RP11-398K22.12_03_H3K27ac.png --numPlotsPerRow 2 --plotTitle "log_RP11-398K22.12_03_H3K27ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/RP11-398K22.12_05_H3K27ac_expr.mat.gz -out ../images/plotprofile/RP11-398K22.12_05_H3K27ac.png --numPlotsPerRow 2 --plotTitle "log_RP11-398K22.12_05_H3K27ac"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -out ../images/plotprofile/CTD-2587H24.5_01_H3K36me3.png --numPlotsPerRow 2 --plotTitle "log_CTD-2587H24.5_01_H3K36me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -out ../images/plotprofile/CTD-2587H24.5_03_H3K36me3.png --numPlotsPerRow 2 --plotTitle "log_CTD-2587H24.5_03_H3K36me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_06_H3K27me3.png --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_06_H3K27me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_06_H3K4me3.png --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_06_H3K4me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_AD04_H3K27me3.png --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_AD04_H3K27me3"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -out ../images/plotprofile/MAPKAPK5-AS1_AD04_H3K4me3.png --numPlotsPerRow 2 --plotTitle "log_MAPKAPK5-AS1_AD04_H3K4me3"
+
+
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/FGD5-AS1_H3K9ac_enchancers.mat.gz -out ../images/plotprofile/FGD5-AS1_H3K9ac_enchancers.png --plotTitle "FGD5-AS1_H3K9ac_enchancers"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/AC005592.2_H3K9me3_enchancers.mat.gz -out ../images/plotprofile/AC005592.2_H3K9me3_enchancers.png --plotTitle "AC005592.2_H3K9me3_enchancers"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/RP11-398K22.12_H3K27ac_enchancers.mat.gz -out ../images/plotprofile/RP11-398K22.12_H3K27ac_enchancers.png --plotTitle "RP11-398K22.12_H3K27ac_enchancers"
+
+plotProfile -m ../data/chip/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_enchancers.mat.gz -out ../images/plotprofile/CTD-2587H24.5_H3K36me3_enchancers.png --plotTitle "CTD-2587H24.5_H3K36me3_enchancers"
