@@ -4,7 +4,7 @@ channels:
   - bioconda
 dependencies:
   - python=3.10.0
-  - pandas=2.0.3
+  - pandas=1.5.3
   - matplotlib=3.7.2
   - scipy=1.11.1
   - statsmodels=0.14.0
