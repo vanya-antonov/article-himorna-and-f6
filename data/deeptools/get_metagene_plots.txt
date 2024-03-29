@@ -1,0 +1,39 @@
+###### bamCoverage -> bigwigCompare -> computeMatrix -> plotProfile
+
+# bamCoverage
+
+bamCoverage -b C-5_.bam -o C-5_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b C-6_.bam -o C-6_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b C-7_.bam -o C-7_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b C-8_.bam -o C-8_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b C-9_.bam -o C-9_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b C-10.bam -o C-10.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+
+# bigwigCompare
+
+bigwigCompare -b1 C-5_.bigWig -b2 I-5_.bigWig -o AC005592.2_02_H3K9me3.bigWig -of bigwig
+bigwigCompare -b1 C-6_.bigWig -b2 I-6_.bigWig -o AC005592.2_03_H3K9me3.bigWig -of bigwig
+
+bigwigCompare -b1 C-7_.bigWig -b2 I-7_.bigWig -o RP11-398K22.12_03_H3K27ac.bigWig -of bigwig
+bigwigCompare -b1 C-8_.bigWig -b2 I-8_.bigWig -o RP11-398K22.12_05_H3K27ac.bigWig -of bigwig
+
+bigwigCompare -b1 C-9_.bigWig -b2 I-9_.bigWig -o CTD-2587H24.5_01_H3K36me3.bigWig -of bigwig
+bigwigCompare -b1 C-10.bigWig -b2 I-10.bigWig -o CTD-2587H24.5_03_H3K36me3.bigWig -of bigwig
+
+# computeMatrix
+
+computeMatrix scale-regions -S NCA_H3K9me3_1.bigWig NCA_H3K9me3_2.bigWig AC005592.2_02_H3K9me3.bigWig AC005592.2_03_H3K9me3.bigWig -R ../genelists/nc_high.bed ../genelists/nc_low.bed ../genelists/nc_zero.bed -o AC005592.2_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S NCA_H3K27ac_1.bigWig NCA_H3K27ac_2.bigWig RP11-398K22.12_03_H3K27ac.bigWig RP11-398K22.12_05_H3K27ac.bigWig -R ../genelists/nc_high.bed ../genelists/nc_low.bed ../genelists/nc_zero.bed -o RP11-398K22.12_H3K27ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S NCA_H3K36me3_1.bigWig NCA_H3K36me3_2.bigWig CTD-2587H24.5_01_H3K36me3.bigWig CTD-2587H24.5_03_H3K36me3.bigWig -R ../genelists/nc_high.bed ../genelists/nc_low.bed ../genelists/nc_zero.bed -o CTD-2587H24.5_H3K36me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+# plotProfile
+
+plotProfile -m AC005592.2_H3K9me3_expr.mat.gz -out AC005592.2_H3K9me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*AC005592.2_H3K9me3" --plotFileFormat svg
+
+
+plotProfile -m RP11-398K22.12_H3K27ac_expr.mat.gz -out RP11-398K22.12_H3K27ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*RP11-398K22.12_H3K27ac" --plotFileFormat svg
+
+
+plotProfile -m CTD-2587H24.5_H3K36me3_expr.mat.gz -out CTD-2587H24.5_H3K36me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*CTD-2587H24.5_H3K36me3" --plotFileFormat svg
